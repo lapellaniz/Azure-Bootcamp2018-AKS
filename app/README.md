@@ -1,20 +1,34 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+## Topics Presented
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+1) Logging using .NET Core
+2) Configuration mangement using .NET Core appsettings.json
+3) Mounting volumes for k8s config-map and secrets
+4) Docker
+5) self-hosting background worker service
+6) Handling signals in order to gracefully shutdown application
+7) K8s deployment configuration
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Running Startup
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+```
+var host = await new ServiceHostBuilder()
+                .UseConfiguration(args)
+                .UseStartup<Startup>().BuildAsync();
+await host.RunAsync();
+```
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Docker
+
+* [docker-compose.yml](docker-compose.yml)
+* [Dockerfile](src/ImageProcessor.Service/Dockerfile)
+
+
+## AKS Configuration
+[kube-deploy.yml](deploy/kube/kube-deploy.yml)
+
+## Build Scripts
+
+* [Transform configuration file](build/scripts/mergesettings.ps1)
+* [Set Docker version variable](build/scripts/setsemvervariable.sh)
+    * [package.json](build/scripts/package.json)
+    * [index.js](build/scripts/index.js)
