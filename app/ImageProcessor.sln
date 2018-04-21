@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageProcessor.Service", "src\ImageProcessor.Service\ImageProcessor.Service.csproj", "{99B4A565-D76A-4012-A89A-583DC08C488A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageProcessor.Service.Hosting", "src\ImageProcessor.Service.Hosting\ImageProcessor.Service.Hosting.csproj", "{EED2F99E-2FF8-409E-8A19-7379A743E77B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageProcessor.Service.Hosting.Abstractions", "src\ImageProcessor.Service.Hosting.Abstractions\ImageProcessor.Service.Hosting.Abstractions.csproj", "{7C3FFC97-3633-432F-B852-13FB37B7F2CC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42712885-9C03-4EBB-91A3-111C4491476A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageProcessor.Business", "src\ImageProcessor.Business\ImageProcessor.Business.csproj", "{A557BB20-B57B-4692-8943-98FB3674162C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B493C34F-91B4-4DF6-A6AE-CA6CF9A2AD33}"
+	ProjectSection(SolutionItems) = preProject
+		myscript.sh = myscript.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{F98EAFF6-259F-4462-8DA7-3E97C96712CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{1B79C261-BE32-4F04-B815-02CDFF8D8421}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kube", "kube", "{2A4528EC-26E0-4BAB-8520-BBFAE67C2D8B}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\kube\kube-deploy.yml = deploy\kube\kube-deploy.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{0DF4799D-2C4E-4C29-95BC-A87826A0E910}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\kube\config\appsettings.secrets.json = deploy\kube\config\appsettings.secrets.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99B4A565-D76A-4012-A89A-583DC08C488A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B4A565-D76A-4012-A89A-583DC08C488A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B4A565-D76A-4012-A89A-583DC08C488A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B4A565-D76A-4012-A89A-583DC08C488A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED2F99E-2FF8-409E-8A19-7379A743E77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED2F99E-2FF8-409E-8A19-7379A743E77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED2F99E-2FF8-409E-8A19-7379A743E77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED2F99E-2FF8-409E-8A19-7379A743E77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C3FFC97-3633-432F-B852-13FB37B7F2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C3FFC97-3633-432F-B852-13FB37B7F2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C3FFC97-3633-432F-B852-13FB37B7F2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C3FFC97-3633-432F-B852-13FB37B7F2CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42712885-9C03-4EBB-91A3-111C4491476A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42712885-9C03-4EBB-91A3-111C4491476A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42712885-9C03-4EBB-91A3-111C4491476A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42712885-9C03-4EBB-91A3-111C4491476A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A557BB20-B57B-4692-8943-98FB3674162C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A557BB20-B57B-4692-8943-98FB3674162C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A557BB20-B57B-4692-8943-98FB3674162C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A557BB20-B57B-4692-8943-98FB3674162C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A4528EC-26E0-4BAB-8520-BBFAE67C2D8B} = {1B79C261-BE32-4F04-B815-02CDFF8D8421}
+		{0DF4799D-2C4E-4C29-95BC-A87826A0E910} = {2A4528EC-26E0-4BAB-8520-BBFAE67C2D8B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EF0B9DB-28E7-48D0-88D9-03169F81EB5F}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+{
+  "name": "ci-build",
+  "version": "1.0.0",
+  "description": "Set SemVer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-git-version"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-git-version": "0.1.2",
+    "yargs": "11.1.0"
+  }
+}

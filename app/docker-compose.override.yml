@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  lra.imageprocessor.service:
+    volumes:
+    - type: bind
+      source: ${ContainerConfigPath-C:/etc/lra.ImageProcessor.Service}
+      target: /etc/lra.ImageProcessor.Service
+      read_only: true
+      volume:
+        nocopy: true

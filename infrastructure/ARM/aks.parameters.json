@@ -1,0 +1,33 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dnsNamePrefix": {
+      "value": ""
+    },
+    "adminSshPublickey": {
+      "value": ""
+    },
+    "servicePrincipalClientId": {
+      "value": ""
+    },
+    "servicePrincipalClientSecret": {
+      "value": ""
+    },
+    "agentCount": {
+      "value": 2
+    },
+    "agentVMSize": {
+      "value": "Standard_D2_v2"
+    },
+    "adminUsername": {
+      "value": ""
+    },
+    "omsWorkspaceName": {
+      "value": ""
+    },
+    "k8sVersion": {
+      "value": "1.9.1"
+    }
+  }
+}

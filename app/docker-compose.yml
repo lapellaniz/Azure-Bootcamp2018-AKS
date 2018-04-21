@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  lra.imageprocessor.service:
+    image: lra.imageprocessor.service
+    build:
+      context: .
+      dockerfile: src/ImageProcessor.Service/Dockerfile
+      args:
+        BuildConfiguration: ${BuildConfiguration-Debug}
+        SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN-token}
+        ASSEMBLY_VERSION: ${ASSEMBLY_VERSION-0.0}
+        FILE_VERSION: ${FILE_VERSION-0.0.0.0}

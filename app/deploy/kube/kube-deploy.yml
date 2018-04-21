@@ -1,0 +1,51 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: lraimageprocessorservice  
+spec:
+  selector:
+    matchLabels:
+      app: lraimageprocessorservice
+  serviceName: lraimageprocessorservice
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: lraimageprocessorservice
+        appversion: ${DOCKER_VERSION}
+        team: lrateam
+        release: ${RELEASE_NUMBER}
+    spec:
+      terminationGracePeriodSeconds: 60      
+      containers:
+      - name: lraimageprocessorservice
+        image: ${REPOSITORY_URL}/lra.imageprocessor.service:${DOCKER_VERSION}
+        readinessProbe:
+          exec:
+            command:
+            - test
+            - '`find . -name Status.txt`'
+          initialDelaySeconds: 5
+          periodSeconds: 15
+        env:
+        - name: "NETCORE_ENVIRONMENT"
+          value: "${Environment}"
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: lraimageprocessorservice-config
+          mountPath: /etc/lra.ImageProcessor.Service/local
+        - name: lraimageprocessorservice-secrets
+          mountPath: /etc/lra.ImageProcessor.Service/localsecrets
+      volumes:
+      - name: lraimageprocessorservice-config
+        configMap:
+          name: lraimageprocessorservice-config
+          optional: false
+      - name: lraimageprocessorservice-secrets
+        secret:
+          secretName: lraimageprocessorservice-secrets
+          optional: false
+      restartPolicy: Always
